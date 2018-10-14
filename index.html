@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,43 +11,22 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 
 </head>
-<body>
-    
-    <!-- // pseudo code 
-    // pick theme for trivia questions
-    // create 10 questions with multiple choice answers
-    // 1 image for game background 
-    // 10 gif/image for player rewards 
-    // 10 image for correct answer
-    // timer start function required per page 
-    // one question per page
-    // when page loads, player button to start game
-    // timer countdown 15 seconds per page
-    // if player guesses correctly
-    // display reward image
-    // if player guesses incorrectly, 
-    // display you guessed incorrectly
-    // then display reward image
-    // if no input by player,
-    // timer runs out  
-    // move on to next new random question
-    // repeat each question with the steps above
-    // final screen needs counter
-    // use counter to display number of correct and incorrect answers
-    // option to restart game without reloading the page 
-    // css styling needs 
-    // game box
-    // answer box
-    // hover display
-    // play again  button-->
 
+<body>
+
+    <h1>Roller Derby Trivia</h1>
+    <div class="wrapper">
+        <div id="timeleft"></div>
+        <div id="questionblock"></div>
+        <div id="answerblock"></div>
+        <button class="btn btn-success" id="start">Start Game</button><br>
+        <button class="btn btn-success" id="reset">Play Again?</button>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="./assets/javascript/app.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./assets/javascript/app.js"></script>
 
 </body>
+
 </html>
-
-
-
