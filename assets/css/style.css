@@ -4,4 +4,73 @@ font-family: 'Righteous', cursive;
 font-family: 'Abril Fatface', cursive;
 font-family: 'Bree Serif', serif; */
 
-/* fonts i like for roller derby theme */
+.answerchoice {
+    border: 1px solid black;
+    border-radius: 5%;
+	width: 40%;
+	color: black;
+    text-align: center;
+    margin: 10px auto;
+    font-size: 24px;
+    background-color: white;
+
+}
+
+img {
+  max-height: 250px;
+  width: auto;
+}
+
+#answerblock {
+  text-align: center;
+
+}
+
+#questionblock {
+  text-align: center;
+  font-weight: bold;
+}
+
+#reset {
+  visibility: visible;
+}
+
+body {
+  background-image: url("images/wftda.jpg");
+  background-size: cover;
+  font-family: 'Righteous', cursive;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  padding: 20px;
+  font-size: 45px;
+}
+
+p {
+  margin: 10px;
+  font-weight: bold;
+  color: rgb(213, 167, 167);
+  font-size: 20px;
+}
+
+h2, h4 {
+  margin: 30px;
+  font-weight: bold;
+}
+
+.wrapper {
+  margin: 10px auto;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid black;
+  height: 500px;
+  width: 60%;
+  text-align: center;
+}
+
+.btn {
+  position: relative;
+  bottom: -150px;
+}
