@@ -56,8 +56,8 @@ $(document).ready(function () {
             photo: "assets/images/blocker.gif"
         },
         {
-            question: "If this quiz inspired you to play derby, what should you do first?",
-            choice: ["trail skate with friends", "attend practice sessions", "contact your local derby league", "go to roller disco night"],
+            question: "If this quiz inspired you to play roller derby, what should you do first?",
+            choice: ["trail skate with friends", "attend practice sessions", "contact your local derby league", "go and watch a derby bout"],
             answer: 2,
             photo: "assets/images/beOwnHero.gif"
         }];
@@ -75,8 +75,6 @@ $(document).ready(function () {
     var newArray = [];
     var holder = [];
 
-    // console.log(options.length);
-
 
     $("#reset").hide();
     // click start button to start game
@@ -88,6 +86,7 @@ $(document).ready(function () {
             holder.push(options[i]);
         }
     })
+
     // timer start
     function runTimer() {
         if (!running) {
@@ -116,4 +115,29 @@ $(document).ready(function () {
         clearInterval(intervalId);
     }
     
+    // randomly pick question in array if not already shown
+    // display question and loop though and display possible answers
+    function displayQuestion() {
+        // generate random index in array
+        index = Math.floor(Math.random()*options.length);
+        pick = options[index];
+    
+    //	if (pick.shown) {
+    //		//recursive to continue to generate new index until one is chosen that has not shown in this game yet
+    //		displayQuestion();
+    //	} else {
+    //		console.log(pick.question);
+            // iterate through answer array and display
+            $("#questionblock").html("<h2>" + pick.question + "</h2>");
+            for(var i = 0; i < pick.choice.length; i++) {
+                var userChoice = $("<div>");
+                userChoice.addClass("answerchoice");
+                userChoice.html(pick.choice[i]);
+                // assign array position to it so it can check answer
+                userChoice.attr("data-guessvalue", i);
+                $("#answerblock").append(userChoice);
+    //		}
+    }
+    
+    //click function to select answer and outcomes
 
