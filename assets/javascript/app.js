@@ -65,7 +65,7 @@ $(document).ready(function () {
     var correctCount = 0;
     var wrongCount = 0;
     var unanswerCount = 0;
-    var timer = 20;
+    var timer = 15;
     var intervalId;
     var userGuess = "";
     var running = false;
@@ -74,6 +74,8 @@ $(document).ready(function () {
     var index;
     var newArray = [];
     var holder = [];
+
+    // console.log(options.length);
 
 
     $("#reset").hide();
@@ -107,3 +109,11 @@ $(document).ready(function () {
             hidepicture();
         }
     }
+
+    // timer stop
+    function stop() {
+        running = false;
+        clearInterval(intervalId);
+    }
+    
+
