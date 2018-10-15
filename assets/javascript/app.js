@@ -29,7 +29,7 @@ $(document).ready(function () {
             question: "The blockers are playing both defense and offense for the team at the same time. Together they are called _____? ",
             choice: ["the wall", "the attackers", "the pack", "the blockers"],
             answer: 2,
-            photo: "assets/images/pack.gif"
+            photo: "assets/images/blockers.gif"
         },
         {
             question: "Only the girl with the helmet STAR cover can score points for the team. What is her position?",
@@ -53,10 +53,10 @@ $(document).ready(function () {
             question: "A blocker must be within _____ feet of the pack to execute a legal block?",
             choice: ["10", "15", "20", "no limit"],
             answer: 2,
-            photo: "assets/images/blocker.gif"
+            photo: "assets/images/20feet.gif"
         },
         {
-            question: "If this quiz inspired you to play roller derby, what should you do first?",
+            question: "What can you do if you want to get involved and skate roller derby?",
             choice: ["trail skate with friends", "attend practice sessions", "contact your local derby league", "go and watch a derby bout"],
             answer: 2,
             photo: "assets/images/beOwnHero.gif"
@@ -65,7 +65,7 @@ $(document).ready(function () {
     var correctCount = 0;
     var wrongCount = 0;
     var unanswerCount = 0;
-    var timer = 15;
+    var timer = 20;
     var intervalId;
     var userGuess = "";
     var running = false;
@@ -115,4 +115,27 @@ $(document).ready(function () {
         clearInterval(intervalId);
     }
 
-    
+    // randomly pick question in array if not already shown
+    // display question and loop though and display possible answers
+    function displayQuestion() {
+        // generate random index in array
+        index = Math.floor(Math.random() * options.length);
+        pick = options[index];
+
+        //	if (pick.shown) {
+        //		// recursive to continue to generate new index until one is chosen that has not shown in this game yet
+        //		displayQuestion();
+        //	} else {
+        //		console.log(pick.question);
+        // iterate through answer array and display
+        $("#questionblock").html("<h2>" + pick.question + "</h2>");
+        for (var i = 0; i < pick.choice.length; i++) {
+            var userChoice = $("<div>");
+            userChoice.addClass("answerchoice");
+            userChoice.html(pick.choice[i]);
+            // assign array position to it so can check answer
+            userChoice.attr("data-guessvalue", i);
+            $("#answerblock").append(userChoice);
+            //		}
+        }
+

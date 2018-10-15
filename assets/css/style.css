@@ -7,12 +7,12 @@ font-family: 'Bree Serif', serif; */
 .answerchoice {
     border: 1px solid black;
     border-radius: 5%;
-	width: 40%;
-	color: black;
+	  width: 50%;
+	  color: black;
     text-align: center;
     margin: 10px auto;
     font-size: 24px;
-    background-color: white;
+    background-color: pink;
 
 }
 
@@ -36,23 +36,23 @@ img {
 }
 
 body {
-  background-image: url("images/wftda.jpg");
+  background-image: url("../images/2018championships.png");
   background-size: cover;
   font-family: 'Righteous', cursive;
 }
 
 h1 {
   text-align: center;
-  color: white;
+  color: black;
   font-weight: bolder;
-  padding: 20px;
+  padding: 10px;
   font-size: 45px;
 }
 
 p {
   margin: 10px;
   font-weight: bold;
-  color: rgb(213, 167, 167);
+  color: pink;
   font-size: 20px;
 }
 
@@ -64,9 +64,9 @@ h2, h4 {
 .wrapper {
   margin: 10px auto;
   background-color: rgba(255, 255, 255, 0.7);
-  border: 2px solid black;
+  border: 2px solid pink;
   height: 500px;
-  width: 60%;
+  width: 80%;
   text-align: center;
 }
 
