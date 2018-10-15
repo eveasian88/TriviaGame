@@ -1,6 +1,4 @@
-/* font-family: 'Merriweather', serif;
-font-family: 'Bitter', serif;
-font-family: 'Righteous', cursive;
+/* font-family: 'Righteous', cursive;
 font-family: 'Abril Fatface', cursive;
 font-family: 'Bree Serif', serif; */
 
@@ -36,16 +34,16 @@ img {
 }
 
 body {
-  background-image: url("../images/2018championships.png");
+  background-image: url("images/backgroundPhoto.png");
   background-size: cover;
-  font-family: 'Righteous', cursive;
+  font-family: 'Abril Fatface', cursive;
 }
 
 h1 {
   text-align: center;
   color: black;
   font-weight: bolder;
-  padding: 10px;
+  padding: 30px;
   font-size: 45px;
 }
 
@@ -64,7 +62,7 @@ h2, h4 {
 .wrapper {
   margin: 10px auto;
   background-color: rgba(255, 255, 255, 0.7);
-  border: 2px solid pink;
+  border: 3px solid pink;
   height: 500px;
   width: 80%;
   text-align: center;

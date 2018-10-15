@@ -26,10 +26,10 @@ $(document).ready(function () {
             photo: "assets/images/pivot.gif"
         },
         {
-            question: "The blockers are playing both defense and offense for the team at the same time. Together they are called _____? ",
+            question: "The blockers play both defense and offense at the same time. Together they are called _____? ",
             choice: ["the wall", "the attackers", "the pack", "the blockers"],
             answer: 2,
-            photo: "assets/images/blockers.gif"
+            photo: "assets/images/pack.gif"
         },
         {
             question: "Only the girl with the helmet STAR cover can score points for the team. What is her position?",
@@ -56,10 +56,10 @@ $(document).ready(function () {
             photo: "assets/images/20feet.gif"
         },
         {
-            question: "What can you do if you want to get involved and skate roller derby?",
-            choice: ["trail skate with friends", "attend practice sessions", "contact your local derby league", "go and watch a derby bout"],
+            question: "In roller derby, a new skater is called _____?",
+            choice: ["unicorn", "wifey", "fresh meat", "bleacher creature"],
             answer: 2,
-            photo: "assets/images/beOwnHero.gif"
+            photo: "assets/images/freshMeat.gif"
         }];
 
     var correctCount = 0;
