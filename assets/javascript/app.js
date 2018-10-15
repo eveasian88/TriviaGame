@@ -139,3 +139,10 @@ $(document).ready(function () {
             //		}
         }
 
+// need to do the following steps to get game running
+// click function to select answers and outcomes
+// grabs a question
+// correct guess or wrong guess outcomes
+// figure out how to display photo/gif if they guess correct or not
+// run the timer count down until all questions are answered
+// need reset button to restart
