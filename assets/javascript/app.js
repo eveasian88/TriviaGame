@@ -5,7 +5,7 @@ $(document).ready(function () {
             question: "Roller derby rules and safety standards are governed by which association?",
             choice: ["AATSP", "WFTDA", "CLTA", "RRG"],
             answer: 1,
-            photo: "assets/images/wftda.jpg"
+            photo: "assets/images/wftda.gif"
         },
         {
             question: "Skaters who play roller derby can wear what type of skates on the track?",
@@ -35,7 +35,7 @@ $(document).ready(function () {
             question: "Only the girl with the helmet STAR cover can score points for the team. What is her position?",
             choice: ["jammer", "pivot", "blocker", "referee"],
             answer: 0,
-            photo: "assets/images/jammer.gif"
+            photo: "assets/images/jammer.gif" // need better gif here
         },
         {
             question: "After the lead jammer makes an initial pass, she can score points after passing each skater's _____.",
@@ -59,13 +59,13 @@ $(document).ready(function () {
             question: "In roller derby, a new skater is called _____?",
             choice: ["unicorn", "wifey", "fresh meat", "bleacher creature"],
             answer: 2,
-            photo: "assets/images/freshMeat.gif"
+            photo: "assets/images/freshMeat.gif" // need better gif here
         }];
 
     var correctCount = 0;
     var wrongCount = 0;
     var unanswerCount = 0;
-    var timer = 20;
+    var timer = 15;
     var intervalId;
     var userGuess = "";
     var running = false;
@@ -75,6 +75,8 @@ $(document).ready(function () {
     var newArray = [];
     var holder = [];
 
+    // define sound
+    var derbyWhistle = new Audio('assets/audio/derbyWhistle.m4a');
 
     $("#reset").hide();
     // click start button to start game
@@ -97,7 +99,7 @@ $(document).ready(function () {
 
     // timer countdown
     function decrement() {
-        $("#timeleft").html("<h3>Time remaining: " + timer + "</h3>");
+        $("#timeleft").html("<h3>time remaining: " + timer + "</h3>");
         timer--;
 
         // stop timer if reach 0
@@ -113,6 +115,7 @@ $(document).ready(function () {
     function stop() {
         running = false;
         clearInterval(intervalId);
+        // derbyWhistle.play(); // sound needs to be added elsewhere
     }
 
     // randomly pick question in array if not already shown
@@ -122,11 +125,6 @@ $(document).ready(function () {
         index = Math.floor(Math.random() * options.length);
         pick = options[index];
 
-        //	if (pick.shown) {
-        //		// recursive to continue to generate new index until one is chosen that has not shown in this game yet
-        //		displayQuestion();
-        //	} else {
-        //		console.log(pick.question);
         // iterate through answer array and display
         $("#questionblock").html("<h2>" + pick.question + "</h2>");
         for (var i = 0; i < pick.choice.length; i++) {
@@ -167,7 +165,7 @@ $(document).ready(function () {
     function hidepicture() {
         $("#answerblock").append("<img src=" + pick.photo + ">");
         newArray.push(pick);
-        options.split(index, 1);
+        options.splice(index, 1);
 
         var hidpic = setTimeout(function () {
             $("#answerblock").empty();
@@ -209,3 +207,45 @@ $(document).ready(function () {
     })
 
 })
+
+
+// random trials: this allows me to answer all questions before 15 seconds and move on to the next question
+
+// Initial setup
+var timers = [];
+for (var n = 0; n < 5; ++n) {
+  startTimer(function(val) {
+    document.getElementById("a" + val).innerHTML += ".";
+  }.bind(null, n), Math.random() * 1000);
+}
+function startTimer(f, interval) {
+  timers.push({
+    f: f,
+    interval: interval,
+    handle: setInterval(f, interval)
+  });
+}
+
+// Stop them after three seconds
+setTimeout(function() {
+  snippet.log("Pausing...");
+  timers.forEach(function(timer) {
+    clearInterval(timer.handle);
+  });
+}, 3000);
+
+// Start them two seconds after that
+setTimeout(function() {
+  snippet.log("Restarting...");
+  timers.forEach(function(timer) {
+    timer.handle = setInterval(timer.f, timer.interval);
+  });
+}, 5000);
+
+// Then stop them for good a couple of seconds later
+setTimeout(function() {
+  snippet.log("Stopping");
+  timers.forEach(function(timer) {
+    clearInterval(timer.handle);
+  });
+}, 7000);
