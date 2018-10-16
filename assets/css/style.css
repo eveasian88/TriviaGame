@@ -21,7 +21,6 @@ img {
 
 #answerblock {
   text-align: center;
-
 }
 
 #questionblock {
@@ -34,7 +33,7 @@ img {
 }
 
 body {
-  background-image: url("images/backgroundPhoto.png");
+  background-image: url("../images/backgroundPhoto.png");
   background-size: cover;
   font-family: 'Abril Fatface', cursive;
 }
