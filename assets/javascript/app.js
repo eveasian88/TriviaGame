@@ -137,7 +137,6 @@ $(document).ready(function () {
             //		}
         }
 
-
         // click function to select answers and outcomes
         $(".answerchoice").on("click", function () {
             //grab array position from userGuess
@@ -209,9 +208,8 @@ $(document).ready(function () {
 })
 
 
-// random trials: this allows me to answer all questions before 15 seconds and move on to the next question
-
-// Initial setup
+// random trials doesn't affect previous timer work: this allows player to answer all questions before 15 seconds and move on to the next question
+// initial setup
 var timers = [];
 for (var n = 0; n < 5; ++n) {
   startTimer(function(val) {
@@ -226,7 +224,7 @@ function startTimer(f, interval) {
   });
 }
 
-// Stop them after three seconds
+// stop them after three seconds
 setTimeout(function() {
   snippet.log("Pausing...");
   timers.forEach(function(timer) {
@@ -234,7 +232,7 @@ setTimeout(function() {
   });
 }, 3000);
 
-// Start them two seconds after that
+// start them two seconds after that
 setTimeout(function() {
   snippet.log("Restarting...");
   timers.forEach(function(timer) {
@@ -242,7 +240,7 @@ setTimeout(function() {
   });
 }, 5000);
 
-// Then stop them for good a couple of seconds later
+// then stop them for good a couple of seconds later
 setTimeout(function() {
   snippet.log("Stopping");
   timers.forEach(function(timer) {

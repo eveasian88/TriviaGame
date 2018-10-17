@@ -1,6 +1,35 @@
 /* font-family: 'Righteous', cursive;
 font-family: 'Abril Fatface', cursive;
 font-family: 'Bree Serif', serif; */
+body {
+  background-image: url("../images/ownHeroBackground.jpg");
+  background-size: cover;
+  font-family: 'Abril Fatface', cursive;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: black;
+  /* -webkit-text-stroke: 1px black; */
+  font-weight: bolder;
+  padding: 35px;
+  font-size: 30px;
+}
+
+p {
+  margin: 10px;
+  font-weight: bold;
+  color: rgb(216, 77, 77);
+  font-size: 25px;
+}
+
+h2, h4 {
+  margin: 30px;
+  font-weight: bold;
+}
+
 
 .answerchoice {
     border: 1px solid black;
@@ -12,11 +41,6 @@ font-family: 'Bree Serif', serif; */
     font-size: 24px;
     background-color: pink;
 
-}
-
-img {
-  max-height: 250px;
-  width: auto;
 }
 
 #answerblock {
@@ -32,42 +56,17 @@ img {
   visibility: visible;
 }
 
-body {
-  background-image: url("../images/ownHeroBackground.jpg");
-  background-size: cover;
-  font-family: 'Abril Fatface', cursive;
-}
-
-h1 {
-  text-align: center;
-  color: black;
-  font-weight: bolder;
-  padding: 30px;
-  font-size: 45px;
-}
-
-p {
-  margin: 10px;
-  font-weight: bold;
-  color: pink;
-  font-size: 20px;
-}
-
-h2, h4 {
-  margin: 30px;
-  font-weight: bold;
-}
 
 .wrapper {
   margin: 10px auto;
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 3px solid pink;
-  height: 500px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 3px solid rgb(216, 77, 77);
+  height: 510px;
   width: 80%;
   text-align: center;
 }
 
 .btn {
   position: relative;
-  bottom: -90px;
+  bottom: -100px;
 }
