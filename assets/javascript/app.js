@@ -35,7 +35,7 @@ $(document).ready(function () {
             question: "Only the girl with the helmet STAR cover can score points for the team. What is her position?",
             choice: ["jammer", "pivot", "blocker", "referee"],
             answer: 0,
-            photo: "assets/images/jammer.gif" // need better gif here
+            photo: "assets/images/jammer.gif"
         },
         {
             question: "After the lead jammer makes an initial pass, she can score points after passing each skater's _____.",
@@ -59,7 +59,7 @@ $(document).ready(function () {
             question: "In roller derby, a new skater is called _____?",
             choice: ["unicorn", "wifey", "fresh meat", "bleacher creature"],
             answer: 2,
-            photo: "assets/images/freshMeat.gif" // need better gif here
+            photo: "assets/images/freshMeat.gif"
         }];
 
     var correctCount = 0;
@@ -117,13 +117,21 @@ $(document).ready(function () {
         clearInterval(intervalId);
         // derbyWhistle.play(); // sound needs to be added elsewhere
     }
-
+        // use for debugging
+        // console.log(timer);
+        
     // randomly pick question in array if not already shown
     // display question and loop though and display possible answers
     function displayQuestion() {
         // generate random index in array
         index = Math.floor(Math.random() * options.length);
         pick = options[index];
+
+        //	if (pick.shown) {
+        //	    //recursive to continue to generate new index until one is chosen that has not shown in this game yet
+        //		displayQuestion();
+        //	} else {
+        //		console.log(pick.question); // problem here, need to fix
 
         // iterate through answer array and display
         $("#questionblock").html("<h2>" + pick.question + "</h2>");
@@ -186,11 +194,8 @@ $(document).ready(function () {
             } else {
                 runTimer();
                 displayQuestion();
-
             }
         }, 3000);
-
-
     }
 
     $("#reset").on("click", function () {
@@ -210,40 +215,40 @@ $(document).ready(function () {
 
 // random trials doesn't affect previous timer work: this allows player to answer all questions before 15 seconds and move on to the next question
 // initial setup
-var timers = [];
-for (var n = 0; n < 5; ++n) {
-  startTimer(function(val) {
-    document.getElementById("a" + val).innerHTML += ".";
-  }.bind(null, n), Math.random() * 1000);
-}
-function startTimer(f, interval) {
-  timers.push({
-    f: f,
-    interval: interval,
-    handle: setInterval(f, interval)
-  });
-}
+// var timers = [];
+// for (var n = 0; n < 5; ++n) {
+//     startTimer(function (val) {
+//         document.getElementById("a" + val).innerHTML += ".";
+//     }.bind(null, n), Math.random() * 1000);
+// }
+// function startTimer(f, interval) {
+//     timers.push({
+//         f: f,
+//         interval: interval,
+//         handle: setInterval(f, interval)
+//     });
+// }
 
-// stop them after three seconds
-setTimeout(function() {
-  snippet.log("Pausing...");
-  timers.forEach(function(timer) {
-    clearInterval(timer.handle);
-  });
-}, 3000);
+// // stop them after three seconds
+// setTimeout(function () {
+//     snippet.log("Pausing...");
+//     timers.forEach(function (timer) {
+//         clearInterval(timer.handle);
+//     });
+// }, 3000);
 
-// start them two seconds after that
-setTimeout(function() {
-  snippet.log("Restarting...");
-  timers.forEach(function(timer) {
-    timer.handle = setInterval(timer.f, timer.interval);
-  });
-}, 5000);
+// // start them two seconds after that
+// setTimeout(function () {
+//     snippet.log("Restarting...");
+//     timers.forEach(function (timer) {
+//         timer.handle = setInterval(timer.f, timer.interval);
+//     });
+// }, 5000);
 
-// then stop them for good a couple of seconds later
-setTimeout(function() {
-  snippet.log("Stopping");
-  timers.forEach(function(timer) {
-    clearInterval(timer.handle);
-  });
-}, 7000);
+// // then stop them for good a couple of seconds later
+// setTimeout(function () {
+//     snippet.log("Stopping");
+//     timers.forEach(function (timer) {
+//         clearInterval(timer.handle);
+//     });
+// }, 7000);

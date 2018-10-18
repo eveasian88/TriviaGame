@@ -2,7 +2,7 @@
 font-family: 'Abril Fatface', cursive;
 font-family: 'Bree Serif', serif; */
 body {
-  background-image: url("../images/ownHeroBackground.jpg");
+  background-image: url("../images/WFTDAbackground.png");
   background-size: cover;
   font-family: 'Abril Fatface', cursive;
   width: 100vw;
@@ -14,14 +14,14 @@ h1 {
   color: black;
   /* -webkit-text-stroke: 1px black; */
   font-weight: bolder;
-  padding: 35px;
-  font-size: 30px;
+  padding: 25px;
+  font-size: 50px;
 }
 
 p {
   margin: 10px;
   font-weight: bold;
-  color: rgb(216, 77, 77);
+  color: pink;
   font-size: 25px;
 }
 
@@ -60,9 +60,9 @@ h2, h4 {
 .wrapper {
   margin: 10px auto;
   background-color: rgba(255, 255, 255, 0.7);
-  border: 3px solid rgb(216, 77, 77);
-  height: 510px;
-  width: 80%;
+  border: 3px solid gray;
+  height: 515px;
+  width: 75%;
   text-align: center;
 }
 
