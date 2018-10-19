@@ -13,19 +13,24 @@ h1 {
   text-align: center;
   color: black;
   font-weight: bolder;
-  padding: 20px;
+  padding: 10px;
   font-size: 50px;
 }
 
 p {
-  margin: 10px;
+  margin: 5px;
   font-weight: bold;
   color: hotpink;
   font-size: 25px;
 }
 
-h2, h4 {
+h2 {
   margin: 60px;
+  font-weight: bold;
+}
+
+h4 {
+  margin: 20px;
   font-weight: bold;
 }
 
@@ -58,7 +63,7 @@ h2, h4 {
 
 .wrapper {
   border-radius: 40%;
-  margin: 10px auto;
+  margin: 5px auto;
   background-color: rgba(255, 255, 255, 0.7);
   border: 3px solid hotpink;
   height: 560px;
@@ -68,7 +73,7 @@ h2, h4 {
 
 .btn {
   position: relative;
-  bottom: -110px;
+  bottom: -120px;
 }
 
 #start, #reset {

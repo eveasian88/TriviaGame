@@ -3,7 +3,7 @@ $(document).ready(function () {
     var options = [
         {
             question: "Roller derby rules and safety standards are governed by which association?",
-            choice: ["AATSP", "WFTDA", "CLTA", "RRG"],
+            choice: ["AATSP", "WFTDA", "CLTA", "BAD GIRLS"],
             answer: 1,
             photo: "assets/images/wftda.gif"
         },
@@ -188,10 +188,10 @@ $(document).ready(function () {
                 correctCount = 0;
                 wrongCount = 0;
                 unanswerCount = 0;
-
+              
             } else {
                 runTimer();
-                displayQuestion();
+                displayQuestion(); 
             }
         }, 3000);
     }
@@ -200,12 +200,12 @@ $(document).ready(function () {
         $("#reset").hide();
         $("#answerblock").empty();
         $("#questionblock").empty();
+        // derbyWhistle.play(); // won't play anywhere i've tried
         for (var i = 0; i < holder.length; i++) {
             options.push(holder[i]);
         }
         runTimer();
         displayQuestion();
-        derbyWhistle.play(); 
     })
 
 })
