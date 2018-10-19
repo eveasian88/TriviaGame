@@ -70,3 +70,21 @@ h2, h4 {
   position: relative;
   bottom: -100px;
 }
+
+#start, #reset {
+  color: white;
+  background: hotpink;
+}
+
+/* target viewport sizes less than 640px */
+/* @media screen (max-width: 640px) {
+  h1, h2, h3 {
+    font-size: 10px; 
+  }
+}
+
+img {
+  display: block;
+        height: 150px;
+        width: 150px;
+} */

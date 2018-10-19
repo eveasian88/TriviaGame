@@ -76,7 +76,7 @@ $(document).ready(function () {
     var holder = [];
 
     // define sound
-    var derbyWhistle = new Audio('assets/audio/derbyWhistle.m4a');
+    var derbyWhistle = new Audio("assets/audio/derbyWhistle.m4a");
 
     $("#reset").hide();
     // click start button to start game
@@ -115,7 +115,6 @@ $(document).ready(function () {
     function stop() {
         running = false;
         clearInterval(intervalId);
-        // derbyWhistle.play(); // sound needs to be added elsewhere
     }
         // use for debugging
         // console.log(timer);
@@ -206,48 +205,7 @@ $(document).ready(function () {
         }
         runTimer();
         displayQuestion();
-
+        derbyWhistle.play(); 
     })
 
 })
-
-
-// random trials doesn't affect previous timer work: this allows player to answer all questions before 15 seconds and move on to the next question
-// initial setup
-// var timers = [];
-// for (var n = 0; n < 5; ++n) {
-//     startTimer(function (val) {
-//         document.getElementById("a" + val).innerHTML += ".";
-//     }.bind(null, n), Math.random() * 1000);
-// }
-// function startTimer(f, interval) {
-//     timers.push({
-//         f: f,
-//         interval: interval,
-//         handle: setInterval(f, interval)
-//     });
-// }
-
-// // stop them after three seconds
-// setTimeout(function () {
-//     snippet.log("Pausing...");
-//     timers.forEach(function (timer) {
-//         clearInterval(timer.handle);
-//     });
-// }, 3000);
-
-// // start them two seconds after that
-// setTimeout(function () {
-//     snippet.log("Restarting...");
-//     timers.forEach(function (timer) {
-//         timer.handle = setInterval(timer.f, timer.interval);
-//     });
-// }, 5000);
-
-// // then stop them for good a couple of seconds later
-// setTimeout(function () {
-//     snippet.log("Stopping");
-//     timers.forEach(function (timer) {
-//         clearInterval(timer.handle);
-//     });
-// }, 7000);
