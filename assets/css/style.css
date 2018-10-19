@@ -14,14 +14,14 @@ h1 {
   color: black;
   /* -webkit-text-stroke: 1px black; */
   font-weight: bolder;
-  padding: 25px;
+  padding: 30px;
   font-size: 50px;
 }
 
 p {
   margin: 10px;
   font-weight: bold;
-  color: pink;
+  color: hotpink;
   font-size: 25px;
 }
 
@@ -39,7 +39,7 @@ h2, h4 {
     text-align: center;
     margin: 10px auto;
     font-size: 24px;
-    background-color: pink;
+    background-color:#ffbad2;
 
 }
 
@@ -60,8 +60,8 @@ h2, h4 {
 .wrapper {
   margin: 10px auto;
   background-color: rgba(255, 255, 255, 0.7);
-  border: 3px solid gray;
-  height: 515px;
+  border: 3px solid hotpink;
+  height: 520px;
   width: 75%;
   text-align: center;
 }

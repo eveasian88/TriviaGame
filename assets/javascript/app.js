@@ -99,8 +99,8 @@ $(document).ready(function () {
 
     // timer countdown
     function decrement() {
-        $("#timeleft").html("<h3>time remaining: " + timer + "</h3>");
         timer--;
+        $("#timeleft").html("<h3>time remaining: " + timer + "</h3>");
 
         // stop timer if reach 0
         if (timer === 0) {
@@ -119,7 +119,7 @@ $(document).ready(function () {
     }
         // use for debugging
         // console.log(timer);
-        
+
     // randomly pick question in array if not already shown
     // display question and loop though and display possible answers
     function displayQuestion() {
@@ -131,7 +131,7 @@ $(document).ready(function () {
         //	    //recursive to continue to generate new index until one is chosen that has not shown in this game yet
         //		displayQuestion();
         //	} else {
-        //		console.log(pick.question); // problem here, need to fix
+        //		console.log(pick.question); // problem here need to fix
 
         // iterate through answer array and display
         $("#questionblock").html("<h2>" + pick.question + "</h2>");
@@ -174,10 +174,9 @@ $(document).ready(function () {
         newArray.push(pick);
         options.splice(index, 1);
 
-        var hidpic = setTimeout(function () {
+        var hidepic = setTimeout(function () {
             $("#answerblock").empty();
             timer = 15;
-
 
             //run the score screen if all questions answered
             if ((wrongCount + correctCount + unanswerCount) === qCount) {
