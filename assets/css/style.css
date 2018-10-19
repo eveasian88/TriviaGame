@@ -12,9 +12,8 @@ body {
 h1 {
   text-align: center;
   color: black;
-  /* -webkit-text-stroke: 1px black; */
   font-weight: bolder;
-  padding: 25px;
+  padding: 20px;
   font-size: 50px;
 }
 
@@ -26,20 +25,20 @@ p {
 }
 
 h2, h4 {
-  margin: 30px;
+  margin: 60px;
   font-weight: bold;
 }
 
 
 .answerchoice {
-    border: 1px solid black;
+    border: 1px solid deeppink;
     border-radius: 5%;
-	  width: 50%;
-	  color: black;
+	  width: 35%;
+	  color: white;
     text-align: center;
     margin: 10px auto;
     font-size: 24px;
-    background-color:#ffbad2;
+    background-color: #ffbad2;
 
 }
 
@@ -58,22 +57,25 @@ h2, h4 {
 
 
 .wrapper {
+  border-radius: 40%;
   margin: 10px auto;
   background-color: rgba(255, 255, 255, 0.7);
   border: 3px solid hotpink;
-  height: 520px;
-  width: 75%;
+  height: 560px;
+  width: 80%;
   text-align: center;
 }
 
 .btn {
   position: relative;
-  bottom: -120px;
+  bottom: -110px;
 }
 
 #start, #reset {
   color: white;
   background: hotpink;
+  padding: 10px 30px;
+  font-size: 18px;
 }
 
 /* target viewport sizes less than 640px */
