@@ -56,7 +56,7 @@ $(document).ready(function () {
             photo: "assets/images/20feet.gif"
         },
         {
-            question: "In roller derby, a new skater is called _____?",
+            question: "In roller derby, a brand new skater is called _____?",
             choice: ["unicorn", "wifey", "fresh meat", "bleacher creature"],
             answer: 2,
             photo: "assets/images/freshMeat.gif"
@@ -76,7 +76,8 @@ $(document).ready(function () {
     var holder = [];
 
     // define sound
-    var derbyWhistle = new Audio("assets/audio/derbyWhistle.m4a");
+    var derbyWhistle = new Audio('assets/audio/derbyWhistle.m4a');
+
 
     $("#reset").hide();
     // click start button to start game
@@ -100,13 +101,13 @@ $(document).ready(function () {
     // timer countdown
     function decrement() {
         timer--;
-        $("#timeleft").html("<h3>time remaining: " + timer + "</h3>");
+        $("#time-left").html("<h3>time remaining: " + timer + "</h3>");
 
         // stop timer if reach 0
         if (timer === 0) {
             unanswerCount++;
             stop();
-            $("#answerblock").html("<p>Time is up! The correct answer is:  " + pick.choice[pick.answer] + "</p>");
+            $("#answer-block").html("<p>Time is up! The correct answer is:  " + pick.choice[pick.answer] + "</p>");
             hidepicture();
         }
     }
@@ -116,8 +117,8 @@ $(document).ready(function () {
         running = false;
         clearInterval(intervalId);
     }
-        // use for debugging
-        // console.log(timer);
+    // use for debugging
+    // console.log(timer);
 
     // randomly pick question in array if not already shown
     // display question and loop though and display possible answers
@@ -126,26 +127,19 @@ $(document).ready(function () {
         index = Math.floor(Math.random() * options.length);
         pick = options[index];
 
-        //	if (pick.shown) {
-        //	    //recursive to continue to generate new index until one is chosen that has not shown in this game yet
-        //		displayQuestion();
-        //	} else {
-        //		console.log(pick.question); // problem here need to fix
-
         // iterate through answer array and display
-        $("#questionblock").html("<h2>" + pick.question + "</h2>");
+        $("#question-block").html("<h2>" + pick.question + "</h2>");
         for (var i = 0; i < pick.choice.length; i++) {
             var userChoice = $("<div>");
-            userChoice.addClass("answerchoice");
+            userChoice.addClass("answer-choice");
             userChoice.html(pick.choice[i]);
             // assign array position to it so can check answer
             userChoice.attr("data-guessvalue", i);
-            $("#answerblock").append(userChoice);
-            //		}
+            $("#answer-block").append(userChoice);
         }
 
         // click function to select answers and outcomes
-        $(".answerchoice").on("click", function () {
+        $(".answer-choice").on("click", function () {
             //grab array position from userGuess
             userGuess = parseInt($(this).attr("data-guessvalue"));
 
@@ -154,14 +148,15 @@ $(document).ready(function () {
                 stop();
                 correctCount++;
                 userGuess = "";
-                $("#answerblock").html("<p>Correct!</p>");
+                $("#answer-block").html("<p>Correct!</p>");
                 hidepicture();
 
             } else {
                 stop();
                 wrongCount++;
                 userGuess = "";
-                $("#answerblock").html("<p>Wrong! The correct answer is: " + pick.choice[pick.answer] + "</p>");
+                $("#answer-block").html("<p>Wrong! The correct answer is: " + pick.choice[pick.answer] + "</p>");
+                derbyWhistle.play(); // won't play anywhere i've tried
                 hidepicture();
             }
         })
@@ -169,38 +164,37 @@ $(document).ready(function () {
 
 
     function hidepicture() {
-        $("#answerblock").append("<img src=" + pick.photo + ">");
+        $("#answer-block").append("<img src=" + pick.photo + ">");
         newArray.push(pick);
         options.splice(index, 1);
 
         var hidepic = setTimeout(function () {
-            $("#answerblock").empty();
+            $("#answer-block").empty();
             timer = 15;
 
             //run the score screen if all questions answered
             if ((wrongCount + correctCount + unanswerCount) === qCount) {
-                $("#questionblock").empty();
-                $("#questionblock").html("<h3>Game Over!  Here's how you did: </h3>");
-                $("#answerblock").append("<h4> Correct:  " + correctCount + "</h4>");
-                $("#answerblock").append("<h4> Incorrect:  " + wrongCount + "</h4>");
-                $("#answerblock").append("<h4> Unanswered:  " + unanswerCount + "</h4>");
+                $("#question-block").empty();
+                $("#question-block").html("<h3>Game Over!  Here's how you did: </h3>");
+                $("#answer-block").append("<h4> Correct:  " + correctCount + "</h4>");
+                $("#answer-block").append("<h4> Incorrect:  " + wrongCount + "</h4>");
+                $("#answer-block").append("<h4> Unanswered:  " + unanswerCount + "</h4>");
                 $("#reset").show();
                 correctCount = 0;
                 wrongCount = 0;
                 unanswerCount = 0;
-              
+
             } else {
                 runTimer();
-                displayQuestion(); 
+                displayQuestion();
             }
         }, 3000);
     }
 
     $("#reset").on("click", function () {
         $("#reset").hide();
-        $("#answerblock").empty();
-        $("#questionblock").empty();
-        // derbyWhistle.play(); // won't play anywhere i've tried
+        $("#answer-block").empty();
+        $("#question-block").empty();
         for (var i = 0; i < holder.length; i++) {
             options.push(holder[i]);
         }
