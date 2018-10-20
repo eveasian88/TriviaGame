@@ -76,8 +76,8 @@ $(document).ready(function () {
     var holder = [];
 
     // define sound
-    var derbyWhistle = new Audio('assets/sound/derbyWhistle.m4a');
-
+    var derbyWhistle = new Audio('assets/audio/derbyWhistle.m4a');
+    var wrongBuzzer = new Audio ('assets/audio/wrongBuzzer.m4a');
 
     $("#reset").hide();
     // click start button to start game
@@ -147,6 +147,7 @@ $(document).ready(function () {
                 stop();
                 correctCount++;
                 userGuess = "";
+                derbyWhistle.play();
                 $("#answer-block").html("<p>Correct!!!</p>");
                 hidepicture();
 
@@ -154,6 +155,7 @@ $(document).ready(function () {
                 stop();
                 wrongCount++;
                 userGuess = "";
+                wrongBuzzer.play();
                 $("#answer-block").html("<p>Wrong! The correct answer is: " + pick.choice[pick.answer] + "</p>");
                 hidepicture();
             }
@@ -191,6 +193,7 @@ $(document).ready(function () {
 
     $("#reset").on("click", function () {
         $("#reset").hide();
+        derbyWhistle.play();
         $("#answer-block").empty();
         $("#question-block").empty();
         for (var i = 0; i < holder.length; i++) {
