@@ -75,12 +75,12 @@ h4 {
   bottom: -90px;
 }
 
-/* #start, #reset {
-  color: white;
-  background: hotpink;
-  padding: 10px 40px;
-  font-size: 20px;
-} */
+#start, #reset {
+  color: #d8bb46;
+  background: #282828;
+  /* padding: 10px 40px;
+  font-size: 20px; */
+}
 
 /* target viewport sizes less than 640px */
 /* @media screen (max-width: 640px) {
