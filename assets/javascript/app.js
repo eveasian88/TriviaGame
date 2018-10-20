@@ -76,12 +76,13 @@ $(document).ready(function () {
     var holder = [];
 
     // define sound
-    var derbyWhistle = new Audio('assets/audio/derbyWhistle.m4a');
+    var derbyWhistle = new Audio('assets/sound/derbyWhistle.m4a');
 
 
     $("#reset").hide();
     // click start button to start game
     $("#start").on("click", function () {
+        derbyWhistle.play();
         $("#start").hide();
         displayQuestion();
         runTimer();
@@ -117,8 +118,6 @@ $(document).ready(function () {
         running = false;
         clearInterval(intervalId);
     }
-    // use for debugging
-    // console.log(timer);
 
     // randomly pick question in array if not already shown
     // display question and loop though and display possible answers
@@ -148,7 +147,7 @@ $(document).ready(function () {
                 stop();
                 correctCount++;
                 userGuess = "";
-                $("#answer-block").html("<p>Correct!</p>");
+                $("#answer-block").html("<p>Correct!!!</p>");
                 hidepicture();
 
             } else {
@@ -156,7 +155,6 @@ $(document).ready(function () {
                 wrongCount++;
                 userGuess = "";
                 $("#answer-block").html("<p>Wrong! The correct answer is: " + pick.choice[pick.answer] + "</p>");
-                derbyWhistle.play(); // won't play anywhere i've tried
                 hidepicture();
             }
         })
@@ -201,5 +199,5 @@ $(document).ready(function () {
         runTimer();
         displayQuestion();
     })
-
+    
 })
