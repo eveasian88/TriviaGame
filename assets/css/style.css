@@ -47,6 +47,11 @@ h4 {
 
 }
 
+.answer-choice:hover {
+  cursor: pointer;
+  background-color: pink;
+}
+
 #answer-block {
   text-align: center;
 }
