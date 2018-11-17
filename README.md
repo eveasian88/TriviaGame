@@ -3,5 +3,3 @@ Test your derby knowledge with this trivia game. Ten questions about Roller Derb
 
 ## Technologies Utilized
 HTML5 • Bootstrap4 • CSS3 • JavaScript • JQuery
-
-https://eveasian88.github.io/TriviaGame/
